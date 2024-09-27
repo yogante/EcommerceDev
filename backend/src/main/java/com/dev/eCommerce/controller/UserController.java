@@ -16,10 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     private final UserService userService;
-    private final UserRepo userRepo;
 
     @GetMapping("/get-all")
-    @PreAuthorize("hasAuthority('ADMIN")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Response> getAllUsers(){
         return ResponseEntity.ok(userService.getAllUsers());
     }

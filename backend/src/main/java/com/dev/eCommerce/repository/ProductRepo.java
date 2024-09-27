@@ -8,6 +8,7 @@ public interface ProductRepo extends JpaRepository<Product, Long> {
 
     List<Product> findByCategoryId(Long categoryId);
 
-    List<Product> findByNameOrDescriptionContaining (String name, String description);
+    // ToDo Name　検索かからない。
+    List<Product> findByNameOrDescriptionContaining(String name, String description);
 
 }
