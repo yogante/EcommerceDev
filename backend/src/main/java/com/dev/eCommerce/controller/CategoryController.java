@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/category")
 @RequiredArgsConstructor
 public class CategoryController {
-    private final CategoryService categoryService;
+    public final CategoryService categoryService;
 
     @PostMapping("/create")
     @PreAuthorize("hasAuthority('ADMIN')")
@@ -22,14 +22,14 @@ public class CategoryController {
     }
 
     @GetMapping("/get-all")
-    private ResponseEntity<Response> getAllCategories(){
+    public ResponseEntity<Response> getAllCategories(){
         return ResponseEntity.ok(categoryService.getAllCategories());
     }
 
 
     @PutMapping("/update/{categoryId}")
     @PreAuthorize("hasAuthority('ADMIN')")
-    private ResponseEntity<Response> updateCategory(@PathVariable Long categoryId, @RequestBody CategoryDto categoryDto){
+    public ResponseEntity<Response> updateCategory(@PathVariable Long categoryId, @RequestBody CategoryDto categoryDto){
         return ResponseEntity.ok(categoryService.updateCategory(categoryId, categoryDto));
     }
 
