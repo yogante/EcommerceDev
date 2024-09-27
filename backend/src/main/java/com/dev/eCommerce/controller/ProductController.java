@@ -18,7 +18,7 @@ public class ProductController {
 
     private final ProductService productService;
 
-    @PostMapping("/create")
+    @PostMapping("/create/{productId}")
     @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Response> createProduct(
             @RequestParam(required = false) Long categoryId,
@@ -33,7 +33,7 @@ public class ProductController {
         return ResponseEntity.ok(productService.createProduct(categoryId, image, name, description, price));
     }
 
-    @PutMapping("/update")
+    @PutMapping("/update/{productId}")
     public ResponseEntity<Response> updateProduct(
             @RequestParam Long productId,
             @RequestParam(required = false) Long categoryId,
@@ -56,7 +56,7 @@ public class ProductController {
         return ResponseEntity.ok(productService.getProductById(productId));
     }
 
-    @GetMapping("/get-all")
+    @GetMapping("/find-all")
     public ResponseEntity<Response> getAllProducts(){
         return ResponseEntity.ok(productService.getAllProducts());
     }
