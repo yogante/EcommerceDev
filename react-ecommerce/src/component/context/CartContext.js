@@ -27,17 +27,13 @@ const cartReducer = (state, action) =>{
     }
 
     case 'REMOVE_ITEM': {
-      const newCart = state.cart.filter(item => 
-        item.id === action.payload.id 
-        ? {...item, quantity: item.quantity +1}
-        : item
-      );
+      const newCart = state.cart.filter(item => item.id !== action.payload.id);
       localStorage.setItem('cart', JSON.stringify(newCart));
       return {...state, cart:newCart};
     }
 
     case 'INCREMENT_ITEM': {
-      const newCart = state.cart.filter(item => 
+      const newCart = state.cart.map(item => 
         item.id === action.payload.id
         ? {...item, quantity: item.quantity + 1}
         : item
@@ -47,7 +43,7 @@ const cartReducer = (state, action) =>{
     }
 
     case 'DECREMENT_ITEM': {
-      const newCart = state.cart.filter(item => 
+      const newCart = state.cart.map(item => 
         item.id === action.payload.id && item.quantity>1
         ? {...item, quantity: item.quantity - 1}
         : item

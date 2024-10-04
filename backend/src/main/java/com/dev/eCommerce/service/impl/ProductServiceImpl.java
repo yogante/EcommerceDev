@@ -132,7 +132,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Response searchProduct(String searchValue) {
-        List<Product> products = productRepo.findByNameOrDescriptionContaining(searchValue, searchValue);
+        List<Product> products = productRepo.findByNameContainingOrDescriptionContaining(searchValue, searchValue);
 
         if (products.isEmpty()) {
             throw new NotFoundException("No Products Found.");

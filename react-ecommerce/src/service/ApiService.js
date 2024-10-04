@@ -72,7 +72,7 @@ export default class  ApiService {
     return response.data;
   }
 
-  static async getProductsById(productId){
+  static async getProductById(productId){
     const response = await axios.get(`${this.BASE_URL}/product/get-by-product-id/${productId}`)
     return response.data;
   }
