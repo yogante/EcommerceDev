@@ -17,6 +17,6 @@ public class CategoryDto {
 
     private Long id;
     private String name;
-    private List<ProductDto> prodctList;
+    private List<ProductDto> productList;
 
 }

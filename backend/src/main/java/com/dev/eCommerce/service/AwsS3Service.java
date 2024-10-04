@@ -45,12 +45,12 @@ public class AwsS3Service {
 
             //set metadata for the object
             ObjectMetadata metadata = new ObjectMetadata();
-            metadata.setContentType("image/jpg");
+            metadata.setContentType("image/jpeg");
 
             //create a put request to upload the image to s3
             PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, s3FileName, inputStream, metadata);
             s3Client.putObject(putObjectRequest);
-            return "https://yoga-ecommerce" + bucketName + ".s3.ap-northeast-3.amazonaws.com/" + s3FileName;
+            return "https://" + bucketName + ".s3.ap-northeast-3.amazonaws.com/" + s3FileName;
 
 
 

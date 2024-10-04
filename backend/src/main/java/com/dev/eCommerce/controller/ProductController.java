@@ -18,7 +18,7 @@ public class ProductController {
 
     private final ProductService productService;
 
-    @PostMapping("/create/{productId}")
+    @PostMapping("/create")
     @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Response> createProduct(
             @RequestParam(required = false) Long categoryId,
@@ -56,7 +56,7 @@ public class ProductController {
         return ResponseEntity.ok(productService.getProductById(productId));
     }
 
-    @GetMapping("/find-all")
+    @GetMapping("/get-all")
     public ResponseEntity<Response> getAllProducts(){
         return ResponseEntity.ok(productService.getAllProducts());
     }
