@@ -47,11 +47,11 @@ const Navbar = () => {
       </form>
 
       <div className='navbar-link'>
-        <NavLink to='/' className={({isActive})=> (isActive ? "active": "")} >Home</NavLink>
-        <NavLink to='/categories' className={({isActive})=> (isActive ? "active": "")}>Categories</NavLink>
+        <NavLink to='/'  >Home</NavLink>
+        <NavLink to='/categories' >Categories</NavLink>
         {isAuthenticated &&  <NavLink to='/profile' className={({isActive})=> (isActive ? "active": "")}>My Account</NavLink>}
-        {isAdmin && <NavLink to='/admin' className={({isActive})=> (isActive ? "active": "")}>Admin</NavLink>}
-        {!isAuthenticated && <NavLink to='/login' className={({isActive})=> (isActive ? "active": "")}>Login</NavLink>}
+        {isAdmin && <NavLink to='/admin'>Admin</NavLink>}
+        {!isAuthenticated && <NavLink to='/login'>Login</NavLink>}
         {isAuthenticated && <NavLink onClick={handleLogout}>Logout</NavLink>}
         <NavLink to='/cart'>Cart</NavLink>
       </div>
