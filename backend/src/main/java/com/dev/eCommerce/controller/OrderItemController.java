@@ -46,7 +46,7 @@ public class OrderItemController {
         Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "id"));
         OrderStatus orderStatus = status !=null ? OrderStatus.valueOf(status.toUpperCase()) : null;
 
-        return ResponseEntity.ok(orderItemService.filterOrderItems(startDate, endDate,orderStatus, itemId, pageable));
+        return ResponseEntity.ok(orderItemService.filterOrderItems(orderStatus, startDate, endDate, itemId, pageable));
     }
 
 

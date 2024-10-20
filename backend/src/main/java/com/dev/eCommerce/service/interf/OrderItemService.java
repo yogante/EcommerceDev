@@ -17,7 +17,7 @@ public interface OrderItemService {
 
     Response updateOrderItemStatus(Long orderItemId, String status);
 
-    Response filterOrderItems(LocalDateTime startDate, LocalDateTime endDate, OrderStatus status, Long itemId, Pageable pageable);
+    Response filterOrderItems(OrderStatus status,LocalDateTime startDate, LocalDateTime endDate, Long itemId, Pageable pageable);
 
 
 }

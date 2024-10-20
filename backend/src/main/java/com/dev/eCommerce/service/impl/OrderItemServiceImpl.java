@@ -96,7 +96,7 @@ public class OrderItemServiceImpl implements OrderItemService {
     }
 
     @Override
-    public Response filterOrderItems( LocalDateTime startDate, LocalDateTime endDate, OrderStatus status, Long itemId, Pageable pageable) {
+    public Response filterOrderItems(OrderStatus status, LocalDateTime startDate, LocalDateTime endDate,Long itemId, Pageable pageable) {
         Specification<OrderItem> spec = Specification.where(OrderItemSpecification.hasStatus(status))
                 .and(OrderItemSpecification.createdBetween(startDate,endDate))
                 .and(OrderItemSpecification.hasItemId(itemId));
