@@ -38,7 +38,7 @@ const LoginPage = () => {
 
   return (
     <div className='register-page'>
-      <h2>Register</h2>
+      <h2>Login</h2>
       {message && <p className='message'>{message}</p>}
       <form onSubmit={handleSubmit}>
         <label>Email: </label>
@@ -57,7 +57,7 @@ const LoginPage = () => {
           onChange={handleChange}
           required/>
 
-          <button type='submit'>Register</button>
+          <button type='submit'>Login</button>
           <p className='register-link'>
             Don't have an account? <a href="/login">login</a>
           </p>

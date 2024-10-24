@@ -12,7 +12,11 @@ import RegisterPage from './component/pages/RegisterPage.jsx';
 import LoginPage from './component/pages/LoginPage.jsx';
 import ProfilePage from './component/pages/ProfilePage.jsx';
 import AddressPage from './component/pages/AddressPage.jsx';
-import { ProtectedRoute } from './service/Guard.js';
+import { AdminRoute, ProtectedRoute } from './service/Guard.js';
+import AdminPage from './component/admin/AdminPage.jsx';
+import AdminCategoryPage from './component/admin/AdminCategoryPage.jsx';
+import AddCategory from './component/admin/AddCategory.jsx';
+import EditCategory from './component/admin/EditCategory.jsx';
 
 function App() {
   return (
@@ -34,6 +38,13 @@ function App() {
         <Route path='/add-address' element={<ProtectedRoute element={<AddressPage/>}  />} />
         <Route path='/edit-address' element={<ProtectedRoute element={<AddressPage/>} />} />
         
+        <Route path='/admin' element={<AdminRoute element={<AdminPage/>} />}/>
+        <Route path='/admin/categories' element={<AdminRoute element={<AdminCategoryPage/>} />}/>
+       
+        <Route path='/admin/add-category' element={<AdminRoute element={<AddCategory/>} />}/>
+        <Route path='/admin/edit-category/:categoryId' element={<AdminRoute element={<EditCategory/>} />}/>
+        
+
       </Routes>
     <Footer />
     </CartProvider>
