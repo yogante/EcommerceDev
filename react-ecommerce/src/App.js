@@ -20,6 +20,8 @@ import EditCategory from './component/admin/EditCategory.jsx';
 import AdminProductPage from './component/admin/AdminProductPage.jsx';
 import AddProductPage from './component/admin/AddProductPage.jsx';
 import EditProductPage from './component/admin/EditProductPage.jsx';
+import AdminOrderPage from './component/admin/AdminOrderPage.jsx';
+import AdminOrderDetailsPage from './component/admin/AdminOrderDetailsPage.jsx';
 
 function App() {
   return (
@@ -50,7 +52,8 @@ function App() {
         <Route path='/admin/add-product' element={<AdminRoute element={<AddProductPage/>} />}/>
         <Route path='/admin/edit-product/:productId' element={<AdminRoute element={<EditProductPage/>} />}/>
         
-
+        <Route path='/admin/orders' element={<AdminRoute element={<AdminOrderPage />} />}/>
+        <Route path='/admin/order-details/:itemId' element={<AdminRoute element={<AdminOrderDetailsPage />} />}/>
 
       </Routes>
     <Footer />

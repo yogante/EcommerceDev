@@ -148,7 +148,7 @@ export default class  ApiService {
   }
 
   static async updateOrderItemStatus(orderItemId, status){
-    const response = await axios.put(`${this.BASE_URL}order/update-item-status/${orderItemId}`,{}, {
+    const response = await axios.put(`${this.BASE_URL}/order/update-item-status/${orderItemId}`,{}, {
       headers:this.getHeader(),
       params:{status}
     })
